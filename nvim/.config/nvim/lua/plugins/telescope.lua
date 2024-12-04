@@ -8,6 +8,25 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
+      require('telescope').setup {
+        defaults = {
+          file_ignore_patterns = {
+            '.metals',
+            '.bloop',
+            '.bsp',
+            'project',
+            'node_modules',
+            'target',
+            '.idea',
+            '.vscode',
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
+      }
       local builtin = require 'telescope.builtin'
       local cbff = function()
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -22,27 +41,27 @@ return {
     end,
   },
   {
-    "nvim-telescope/telescope-ui-select.nvim",
+    'nvim-telescope/telescope-ui-select.nvim',
     config = function()
-      require("telescope").setup({
+      require('telescope').setup {
         extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown(),
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
           },
         },
-      })
+      }
 
-      require("telescope").load_extension("ui-select")
-    end
+      require('telescope').load_extension 'ui-select'
+    end,
   },
   {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "make",
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
     cond = function()
-      return vim.fn.executable("make") == 1
+      return vim.fn.executable 'make' == 1
     end,
     config = function()
-      require("telescope").load_extension("fzf")
-    end
-  }
+      require('telescope').load_extension 'fzf'
+    end,
+  },
 }
