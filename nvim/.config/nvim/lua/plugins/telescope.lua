@@ -11,14 +11,15 @@ return {
       require('telescope').setup {
         defaults = {
           file_ignore_patterns = {
-            '.metals',
-            '.bloop',
-            '.bsp',
-            'project',
-            'node_modules',
-            'target',
-            '.idea',
-            '.vscode',
+            '.git/',
+            '.metals/',
+            '.bloop/',
+            '.bsp/',
+            'project/',
+            'node%_modules/',
+            'target/',
+            '.idea/',
+            '.vscode/',
           },
         },
         pickers = {
