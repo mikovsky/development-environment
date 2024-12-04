@@ -1,9 +1,9 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
-    'rcarriga/nvim-dap-ui',         -- Creates a debugger UI
-    'nvim-neotest/nvim-nio',        -- Dependency for nvim-dap-ui
-    'williamboman/mason.nvim',      -- Installer for debug adapters
+    'rcarriga/nvim-dap-ui', -- Creates a debugger UI
+    'nvim-neotest/nvim-nio', -- Dependency for nvim-dap-ui
+    'williamboman/mason.nvim', -- Installer for debug adapters
     'jay-babu/mason-nvim-dap.nvim', -- Installer for debug adapters
     -- Debugger Adapters below:
     'leoluz/nvim-dap-go',
@@ -57,5 +57,24 @@ return {
 
     -- Debugger Adapters:
     require('dap-go').setup()
+
+    dap.configurations.scala = {
+      {
+        type = 'scala',
+        request = 'launch',
+        name = 'Run or Test Target',
+        metals = {
+          runType = 'runOrTestFile',
+        },
+      },
+      {
+        type = 'scala',
+        request = 'launch',
+        name = 'Test Target',
+        metals = {
+          runType = 'testTarget',
+        },
+      },
+    }
   end,
 }
