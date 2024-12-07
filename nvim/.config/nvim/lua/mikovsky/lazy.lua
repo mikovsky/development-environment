@@ -15,18 +15,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-  {
-    { import = "mikovsky.plugins" },
-    { import = "mikovsky.plugins.lsp" },
+require("lazy").setup({
+  { import = "mikovsky.plugins" },
+  { import = "mikovsky.plugins.lsp" },
+}, {
+  checker = {
+    enable = true,
+    notify = false,
   },
-  {
-    checker = {
-      enable = true,
-      notify = false,
-    },
-    change_detection = {
-      notify = false,
-    },
-  }
-)
+  change_detection = {
+    notify = false,
+  },
+})

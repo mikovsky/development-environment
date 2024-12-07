@@ -10,7 +10,7 @@ return {
     local lspconfig = require("lspconfig")
     local mason_lspconfig = require("mason-lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
-    
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(event)
@@ -30,7 +30,7 @@ return {
 
         opts.desc = "Show LSP type definitions"
         vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-        
+
         opts.desc = "See available code actions"
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
@@ -88,5 +88,5 @@ return {
         })
       end,
     })
-  end
+  end,
 }

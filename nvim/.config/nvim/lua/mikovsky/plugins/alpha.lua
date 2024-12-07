@@ -23,7 +23,6 @@ return {
       "                                            ",
     }
 
-    
     dashboard.section.buttons.val = {
       dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
       dashboard.button("Space ee", "  > Toggle File Explorer", "<cmd>NvimTreeToggle<CR>"),
@@ -32,7 +31,6 @@ return {
       dashboard.button("Space wr", "󰁯  > Restore Session for CWD", "<cmd>SessionRestore<CR>"),
       dashboard.button("q", "  > Quit", "<cmd>qa<CR>"),
     }
-
 
     alpha.setup(dashboard.opts)
 
