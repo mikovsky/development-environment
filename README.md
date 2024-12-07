@@ -63,3 +63,8 @@
 3. Add Coursier to PATH `export PATH="$PATH:$COURSIER_HOME/bin"
 
 ### Node setup
+1. Install nvm using `yay -S nvm`
+2. Source nvm using `echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc`
+3. Restart terminal
+4. Install LTS using `nvm install --lts`
+5. Check installation using `node -v` i `npm --v`
