@@ -26,10 +26,16 @@
 10. Install zsh-syntax-highlighting plugin `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 11. Install zsh-autosuggestions plugin `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
+### Git setup
+1. `git config --global user.email "dudek.michal1996@gmail.com"`
+2. `git config --global user.name "mikovsky"`
+
 ### ssh-keys setup
 1. Create .ssh directory `mkdir ~/.ssh`
 2. Generate ssh-key `ssh-keygen -t ed25519 -C "dudek.michal1996@gmail.com"`
-3. Add to ssh-agent `ssh-add ~/.ssh/github`
+3. Download `dotfiles` repository using HTTPS since there is no ssh configuration yet.
+4. Link SSH Agent `cd ~/dotfiles && stow ssh-agent-service`
+5. Make sure that `~/.zshrc` contains this line `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"` 
 
 ### tmux setup
 1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
