@@ -26,6 +26,11 @@
 10. Install zsh-syntax-highlighting plugin `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 11. Install zsh-autosuggestions plugin `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
+### ssh-keys setup
+1. Create .ssh directory `mkdir ~/.ssh`
+2. Generate ssh-key `ssh-keygen -t ed25519 -C "dudek.michal1996@gmail.com"`
+3. Add to ssh-agent `ssh-add ~/.ssh/github`
+
 ### yay packages
 - google-chrome
 - alacritty
@@ -34,9 +39,3 @@
 - neovim
 - ripgrep
 - lazygit
-
-### tmux configuration
-1. Create directory `mkdir -p ~/.config/tmux/plugins/catppuccin`
-2. Clonse catppuccin plugin `git clone -b v2.1.1 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
-3. Add to .tmux.conf `run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux`
-4. Reload tmux
