@@ -29,6 +29,7 @@
 ### yay packages
 - google-chrome
 - alacritty
+- stow
 - tmux
 - neovim
 - ripgrep
