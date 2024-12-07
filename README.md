@@ -31,6 +31,9 @@
 2. Generate ssh-key `ssh-keygen -t ed25519 -C "dudek.michal1996@gmail.com"`
 3. Add to ssh-agent `ssh-add ~/.ssh/github`
 
+### tmux setup
+1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
 ### yay packages
 - google-chrome
 - alacritty
