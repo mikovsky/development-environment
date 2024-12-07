@@ -29,3 +29,7 @@
 ### yay packages
 - google-chrome
 - alacritty
+- tmux
+- neovim
+- ripgrep
+- lazygit
