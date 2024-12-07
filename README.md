@@ -31,6 +31,7 @@
 ### Git setup
 1. `git config --global user.email "dudek.michal1996@gmail.com"`
 2. `git config --global user.name "mikovsky"`
+3. `git config pull.rebase true`
 
 ### ssh-keys setup
 1. Create .ssh directory `mkdir ~/.ssh`
