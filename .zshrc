@@ -1,3 +1,9 @@
+###########################################################
+###########################################################
+##################### CUSTOM SETTINGS #####################
+###########################################################
+###########################################################
+
 # History configuration
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -10,3 +16,6 @@ setopt hist_verify
 # Alias configuration
 alias l="ls -alhF -v"
 alias l="ls -lhF -v"
+
+# PATH configuration
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
