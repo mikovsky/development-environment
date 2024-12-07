@@ -52,6 +52,7 @@
 - ripgrep
 - lazygit
 - fzf
+- spectacle
 
 ### JDK setup
 1. Install SDKMAN `curl -s "https://get.sdkman.io" | bash`
