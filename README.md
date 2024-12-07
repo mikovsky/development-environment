@@ -34,3 +34,9 @@
 - neovim
 - ripgrep
 - lazygit
+
+### tmux configuration
+1. Create directory `mkdir -p ~/.config/tmux/plugins/catppuccin`
+2. Clonse catppuccin plugin `git clone -b v2.1.1 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
+3. Add to .tmux.conf `run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux`
+4. Reload tmux
