@@ -6,6 +6,8 @@
 - git
 - neofetch
 - htop
+- unzip
+- zip
 
 ### yay installation
 1. `sudo pacman -S --needed base-devel git`
@@ -48,3 +50,16 @@
 - neovim
 - ripgrep
 - lazygit
+- fzf
+
+### JDK setup
+1. Install SDKMAN `curl -s "https://get.sdkman.io" | bash`
+2. Initialize SDKMAN `source "/home/mikovsky/.sdkman/bin/sdkman-init.sh"`
+3. Install JDK `sdk install java 17.0.13-amzn`
+
+### Coursier setup
+1. Download & setup Coursier `curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup`
+2. Add COURSIER_HOME env var to `.zshrc` file `export COURSIER_HOME="/home/mikovsky/.local/share/coursier"
+3. Add Coursier to PATH `export PATH="$PATH:$COURSIER_HOME/bin"
+
+### Node setup
