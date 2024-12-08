@@ -1,12 +1,7 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin.nvim",
-  priority = 1000,
-  config = function()
-    require("catppuccin").setup({
-      flavour = "mocha",
-      transparent_background = true,
-    })
-    vim.cmd.colorscheme("catppuccin")
-  end,
+	"rose-pine/neovim",
+	as = "rose-pine",
+	config = function()
+		vim.cmd.colorscheme("rose-pine")
+	end,
 }

@@ -1,28 +1,14 @@
 return {
-  "stevearc/conform.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local conform = require("conform")
+	"nvimtools/none-ls.nvim",
+	config = function()
+		local null_ls = require("null-ls")
 
-    conform.setup({
-      formatters_by_ft = {
-        json = { "prettier" },
-        lua = { "stylua" },
-        python = { "isort", "black" },
-      },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
-      },
-    })
+		null_ls.setup({
+			sources = {
+				null_ls.builtins.formatting.stylua,
+			},
+		})
 
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-      conform.format({
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 1000,
-      })
-    end, { desc = "Format file or range (in visual mode)" })
-  end,
+		vim.keymap.set("n", "<leader>mp", vim.lsp.buf.format, { desc = "Format Code using LSP" })
+	end,
 }
