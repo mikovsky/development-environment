@@ -44,6 +44,10 @@
 
 ### tmux setup
 1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+2. Install Catppuccin Theme
+   - `mkdir -p ~/.config/tmux/plugins/catppuccin`
+   - `git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
+
 
 ### yay packages
 - google-chrome
