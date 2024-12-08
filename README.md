@@ -38,6 +38,9 @@
 3. Download `dotfiles` repository using HTTPS since there is no ssh configuration yet.
 4. Link SSH Agent `cd ~/dotfiles && stow ssh-agent-service`
 5. Make sure that `~/.zshrc` contains this line `export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"` 
+6. Check if ssh-agent is running `systemctl --user status ssh-agent`
+7. Enable ssh-agent `systemctl --user enable ssh-agent`
+8. Start ssh-agent `systemctl --user start ssh-agent`
 
 ### tmux setup
 1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
