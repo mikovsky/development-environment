@@ -61,7 +61,7 @@
 
 ### Coursier setup
 1. Download & setup Coursier `curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup`
-2. Add `COURSIER_HOME` env var to `.zshrc` file `export COURSIER_HOME="/home/mikovsky/.local/share/coursier"
+2. Add `COURSIER_HOME` env var to `.zshrc` file `export COURSIER_HOME="/home/mikovsky/.local/share/coursier"`
 3. Add Coursier to PATH `export PATH="$PATH:$COURSIER_HOME/bin"`
 
 ### Node setup
