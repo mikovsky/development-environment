@@ -112,6 +112,9 @@ return {
 
 			metals_config.settings = {
 				showImplicitArguments = true,
+				showImplicitConversionsAndClasses = true,
+				showInferredType = true,
+				testUserInterface = "Test Explorer",
 			}
 
 			metals_config.init_options.statusBarProvider = "off"
