@@ -15,7 +15,7 @@ setopt hist_verify
 
 # Alias configuration
 alias l="ls -alhF -v"
-alias l="ls -lhF -v"
+alias ll="ls -lhF -v"
 
 # PATH configuration
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
