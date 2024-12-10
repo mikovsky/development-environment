@@ -58,7 +58,7 @@ return {
 					vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
 					opts.desc = "Show LSP implementations"
-					vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementation<CR>", opts)
+					vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
 					opts.desc = "Show LSP type definitions"
 					vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
