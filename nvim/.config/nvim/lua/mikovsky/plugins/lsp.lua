@@ -46,25 +46,29 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(event)
+					local builtin = require("telescope.builtin")
 					local opts = { buffer = event.buf, silent = true }
 
 					opts.desc = "Show LSP references"
-					vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+					vim.keymap.set("n", "gr", builtin.lsp_references, opts)
+
+					opts.desc = "Show LSP definitions"
+					vim.keymap.set("n", "gd", builtin.lsp_definitions, opts)
 
 					opts.desc = "Go to declaration"
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
-					opts.desc = "Show LSP definitions"
-					vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-
 					opts.desc = "Show LSP implementations"
-					vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
+					vim.keymap.set("n", "gi", builtin.lsp_implementations, opts)
 
 					opts.desc = "Show LSP type definitions"
-					vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+					vim.keymap.set("n", "gt", builtin.lsp_type_definitions, opts)
 
 					opts.desc = "See available code actions"
 					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
+                    opts.desc = "See available code lens"
+                    vim.keymap.set({ "n", "v" }, "<leader>cl", vim.lsp.codelens.run, opts)
 
 					opts.desc = "Smart rename"
 					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
@@ -73,7 +77,7 @@ return {
 					vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
 					opts.desc = "Show line diagnostics"
-					vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+					vim.keymap.set("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", opts)
 
 					opts.desc = "Go to previous diagnostic"
 					vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
@@ -84,8 +88,17 @@ return {
 					opts.desc = "Show documentation on hover"
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
+                    opts.desc = "Show signature help on hover"
+                    vim.keymap.set("n", "<leader>K", vim.lsp.buf.signature_help, opts)
+
 					opts.desc = "Restart LSP"
 					vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+
+                    opts.desc = "Show Symbols in Document"
+                    vim.keymap.set("n", "<leader>fds", builtin.lsp_document_symbols, opts)
+
+                    opts.desc = "Show Symbols in Workspace"
+                    vim.keymap.set("n", "<leader>fws", builtin.lsp_dynamic_workspace_symbols, opts)
 				end,
 			})
 		end,
