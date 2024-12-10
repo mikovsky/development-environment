@@ -6,11 +6,24 @@ vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
+-- vertical movement
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
 -- moving text
+vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("x", "H", "<gv")
-vim.keymap.set("x", "J", ":m '>+1<CR>gv")
-vim.keymap.set("x", "K", ":m '<-2<CR>gv")
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "L", ">gv")
+
+-- text buffers
+vim.keymap.set("x", "<leader>p", "\"_dp")
+vim.keymap.set("x", "<leader>P", "\"_dP")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
 
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
