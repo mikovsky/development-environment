@@ -1,6 +1,8 @@
 [general]
 import = [
-	"~/.config/alacritty/catppuccin-mocha.toml"
+	# "~/.config/alacritty/catppuccin-mocha.toml"
+	# "~/.config/alacritty/rose-pine.toml"
+	"~/.config/alacritty/tokyo-night.toml"
 ]
 
 [env]
