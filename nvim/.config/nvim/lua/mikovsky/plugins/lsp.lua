@@ -19,7 +19,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls" },
+				ensure_installed = { "lua_ls", "ts_ls" },
 			})
 		end,
 	},
@@ -42,6 +42,8 @@ return {
 					},
 				},
 			})
+
+            lsp_config.ts_ls.setup({ capabilities = capabilities })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
