@@ -41,6 +41,9 @@ return {
                         hidden = true,
                     },
                 },
+                extensions = {
+                    fzf = {},
+                },
             })
 
             vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
