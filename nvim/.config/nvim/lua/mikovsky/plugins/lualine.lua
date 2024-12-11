@@ -5,7 +5,7 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status")
 		lualine.setup({
-			options = { theme = "catppuccin" },
+			options = { theme = "tokyonight" },
 			sections = {
 				lualine_x = {
 					{
