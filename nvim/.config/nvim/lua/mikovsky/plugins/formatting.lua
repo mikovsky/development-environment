@@ -9,6 +9,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>mp", vim.lsp.buf.format, { desc = "Format Code using LSP" })
+		vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format Code using LSP" })
 	end,
 }
