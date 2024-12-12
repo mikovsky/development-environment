@@ -26,6 +26,7 @@ return {
                         "target/",
                         ".idea/",
                         ".vscode/",
+                        "venv/",
                     },
                     path_display = { "smart" },
                     mappings = {
