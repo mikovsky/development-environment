@@ -19,7 +19,18 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls" },
+				ensure_installed = { "lua_ls", "ts_ls", "pyright" },
+			})
+		end,
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+					"black",
+					"isort",
+				},
 			})
 		end,
 	},
@@ -44,6 +55,7 @@ return {
 			})
 
 			lsp_config.ts_ls.setup({ capabilities = capabilities })
+			lsp_config.pyright.setup({ capabilities = capabilities })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
