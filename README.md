@@ -50,7 +50,7 @@
 3. Run `<C-s>` + `shift + i` to install plugins using TPM
 
 ### yay packages
-- google-chrome
+- google-chrome (search for ozone flag in chrome://flags, and set it to Wayland)
 - alacritty
 - stow
 - tmux
