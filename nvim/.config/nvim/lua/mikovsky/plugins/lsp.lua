@@ -30,7 +30,7 @@ return {
 				ensure_installed = {
 					"black",
 					"isort",
-                    "prettier",
+					"prettier",
 				},
 			})
 		end,
@@ -154,6 +154,12 @@ return {
 			metals_config.capabilities = capabilities
 			metals_config.on_attach = function(client, buffer)
 				require("metals").setup_dap()
+				vim.keymap.set(
+					"n",
+					"gs",
+					"<cmd>MetalsGotoSuperMethod<CR>",
+					{ desc = "Metals: Goto Super Method", buffer = buffer, silent = true }
+				)
 			end
 
 			return metals_config
