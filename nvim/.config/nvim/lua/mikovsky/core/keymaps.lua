@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- basic
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 
