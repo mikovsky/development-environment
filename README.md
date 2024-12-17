@@ -51,7 +51,7 @@
 
 ### yay packages
 - google-chrome (search for ozone flag in chrome://flags, and set it to Wayland)
-- alacritty
+- alacritty or kitty
 - stow
 - tmux
 - neovim
