@@ -122,7 +122,7 @@ return {
                     vim.keymap.set("n", "<leader>fds", builtin.lsp_document_symbols, opts)
 
                     opts.desc = "Show Symbols in Workspace"
-                    vim.keymap.set("n", "<leader>fws", builtin.lsp_dynamic_workspace_symbols, opts)
+                    vim.keymap.set("n", "<leader>fas", builtin.lsp_dynamic_workspace_symbols, opts)
                 end,
             })
         end,
