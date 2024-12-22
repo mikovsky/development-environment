@@ -9,6 +9,10 @@ vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 -- vertical movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<A-j>", "jzz")
+vim.keymap.set("n", "<A-k>", "kzz")
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
