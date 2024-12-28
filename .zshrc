@@ -16,6 +16,7 @@ setopt hist_verify
 # Alias configuration
 alias l="ls -alhF -v"
 alias ll="ls -lhF -v"
+alias vim="nvim"
 
 # PATH configuration
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
