@@ -55,10 +55,11 @@
 6. Check if ssh-agent is running `systemctl --user status ssh-agent`
 7. Enable ssh-agent `systemctl --user enable ssh-agent`
 8. Start ssh-agent `systemctl --user start ssh-agent`
+9. Add identity to ssh-agent `ssh-add ~/.ssh/<key-name>`
 
 ### tmux setup
 1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-2. Install Catppuccin Theme
+2. (Optional) Install Catppuccin Theme
    - `mkdir -p ~/.config/tmux/plugins/catppuccin`
    - `git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
 3. Run `<C-s>` + `shift + i` to install plugins using TPM
@@ -88,4 +89,4 @@
 
 ### Spotify setup
 1. Install Spotify Launcher so it can updates itself without pacman `yay -S spotify-launcher`
-2. Before running it make sure that locale is set accordingly to documentation here: (https://wiki.archlinux.org/title/Installation_guide#Localization)[Arch Linux - Documentation]
+2. Before running it make sure that locale is set accordingly to documentation here: [Arch Linux - Documentation](https://wiki.archlinux.org/title/Installation_guide#Localization)
