@@ -15,6 +15,20 @@
 3. `cd yay`
 4. `makepkg -si`
 
+### yay packages
+- google-chrome (search for ozone flag in chrome://flags, and set it to Wayland)
+- (Optional) alacritty
+- (Optional) kitty
+- wezterm - IMPORTANT => it needs configuration from wezterm.lua (enable_wayland = false)
+- stow
+- tmux
+- neovim
+- ripgrep
+- lazygit
+- fzf
+- spectacle
+- xclip
+
 ### zsh installation
 1. Install zsh `yay -S zsh`
 2. Change default shell `chsh -s /usr/bin/zsh`
@@ -23,8 +37,8 @@
 5. Install oh-my-zsh `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 6. Install NerdFont `yay -S ttf-meslo-nerd`
 7. Set this NerdFont as terminal default
-8. Install powerlevel10k `yay -S --noconfirm zsh-theme-powerlevel10k-git`
-9. Setup powerlevel10k `echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc`
+8. (Optional) Install powerlevel10k `yay -S --noconfirm zsh-theme-powerlevel10k-git`
+9. (Optional) Setup powerlevel10k `echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc`
 10. Install zsh-syntax-highlighting plugin `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 11. Install zsh-autosuggestions plugin `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 
@@ -49,18 +63,6 @@
    - `git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
 3. Run `<C-s>` + `shift + i` to install plugins using TPM
 
-### yay packages
-- google-chrome (search for ozone flag in chrome://flags, and set it to Wayland)
-- alacritty or kitty or wezterm
-- stow
-- tmux
-- neovim
-- ripgrep
-- lazygit
-- fzf
-- spectacle
-- xclip
-
 ### JDK setup
 1. Install SDKMAN `curl -s "https://get.sdkman.io" | bash`
 2. Initialize SDKMAN `source "/home/mikovsky/.sdkman/bin/sdkman-init.sh"`
@@ -78,3 +80,12 @@
 3. Restart terminal
 4. Install LTS using `nvm install --lts`
 5. Check installation using `node -v` i `npm --v`
+
+### Bluetooth setup
+1. Install bluez standard protocol `yay -S bluez bluez-utils`
+2. Enable Bluetooth service `sudo systemctl enable bluetooth.service`
+3. Start Bluetooth service `sudo systemctl start bluetooth.service`
+
+### Spotify setup
+1. Install Spotify Launcher so it can updates itself without pacman `yay -S spotify-launcher`
+2. Before running it make sure that locale is set accordingly to documentation here: (https://wiki.archlinux.org/title/Installation_guide#Localization)[Arch Linux - Documentation]
