@@ -5,13 +5,6 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function()
-			require("tokyonight").setup({
-				transparent = true,
-				styles = {
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-			})
 			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
@@ -23,7 +16,6 @@ return {
 		config = function()
 			require("catppuccin").setup({
 				flavour = "mocha",
-				transparent_background = true,
 			})
 			-- vim.cmd.colorscheme("catppuccin")
 		end,
@@ -34,15 +26,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				variant = "main",
-				dark_variant = "main",
-				styles = {
-					bold = true,
-					italic = true,
-					transparency = true,
-				},
-			})
+			require("rose-pine").setup()
 			-- vim.cmd.colorscheme("rose-pine")
 		end,
 	},
