@@ -9,26 +9,26 @@ return {
 
 		vim.keymap.set("n", "<leader>jt", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
-		end)
+		end, { desc = "Harpoon: Toggle Quick Menu" })
 
 		vim.keymap.set("n", "<leader>jr", function()
 			harpoon:list():add()
-		end)
+		end, { desc = "Harpoon: Add" })
 
 		vim.keymap.set("n", "<leader>jf", function()
 			harpoon:list():select(1)
-		end)
+		end, { desc = "Harpoon: Select 1" })
 
 		vim.keymap.set("n", "<leader>jd", function()
 			harpoon:list():select(2)
-		end)
+		end, { desc = "Harpoon: Select 2" })
 
 		vim.keymap.set("n", "<leader>js", function()
 			harpoon:list():select(3)
-		end)
+		end, { desc = "Harpoon: Select 3" })
 
 		vim.keymap.set("n", "<leader>ja", function()
 			harpoon:list():select(4)
-		end)
+		end, { desc = "Harpoon: Select 4" })
 	end,
 }
