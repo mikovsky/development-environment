@@ -13,7 +13,7 @@ config = {
 	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "TITLE | RESIZE",
-	color_scheme = "Rosé Pine (Gogh)",
+	color_scheme = "Tokyo Night",
 	font_size = 12,
 	font = wezterm.font(jetbrains_font, { weight = "Regular" }),
 }

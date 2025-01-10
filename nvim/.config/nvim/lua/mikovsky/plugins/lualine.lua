@@ -6,9 +6,9 @@ return {
 		local lazy_status = require("lazy.status")
 		lualine.setup({
 			options = {
-				-- theme = "tokyonight",
+				theme = "tokyonight",
 				-- theme = "catppuccin",
-				theme = "rose-pine",
+				-- theme = "rose-pine",
 			},
 			sections = {
 				lualine_x = {

@@ -5,7 +5,7 @@ return {
 		priority = 1000,
 		opts = {},
 		config = function()
-			-- vim.cmd.colorscheme("tokyonight-night")
+			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
 	{
@@ -31,7 +31,7 @@ return {
 					italic = false,
 				},
 			})
-			vim.cmd.colorscheme("rose-pine")
+			-- vim.cmd.colorscheme("rose-pine")
 		end,
 	},
 }
