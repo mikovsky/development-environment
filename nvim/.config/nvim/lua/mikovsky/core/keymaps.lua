@@ -5,6 +5,7 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
 
 -- vertical movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -24,8 +25,8 @@ vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "L", ">gv")
 
 -- text buffers
-vim.keymap.set("x", "<leader>p", "\"_dp")
-vim.keymap.set("x", "<leader>P", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dp')
+vim.keymap.set("x", "<leader>P", '"_dP')
 
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
