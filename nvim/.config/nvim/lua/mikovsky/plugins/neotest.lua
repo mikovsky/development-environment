@@ -10,7 +10,9 @@ return {
 	config = function()
 		require("neotest").setup({
 			adapters = {
-				require("neotest-scala"),
+				require("neotest-scala")({
+					runner = "sbt",
+				}),
 			},
 		})
 
