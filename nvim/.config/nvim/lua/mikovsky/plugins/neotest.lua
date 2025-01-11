@@ -5,7 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"antoinemadec/FixCursorHold.nvim",
 		"nvim-treesitter/nvim-treesitter",
-		"mikovsky/neotest-scala",
+		"olisikh/neotest-scala",
 	},
 	config = function()
 		require("neotest").setup({
