@@ -10,8 +10,6 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 8
 
 -- Tabs & Spacing
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
@@ -43,11 +41,10 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 
 -- enable highlight on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('mikovsky-highlight-yank', { clear = true }),
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("mikovsky-highlight-yank", { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
 })
-
