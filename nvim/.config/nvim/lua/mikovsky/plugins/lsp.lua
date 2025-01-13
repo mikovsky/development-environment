@@ -139,7 +139,7 @@ return {
     ft = { "scala", "sbt", "java" },
     opts = function()
       local metals = require("metals")
-      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       vim.keymap.set("n", "<leader>mw", function()
         metals.hover_worksheet()
@@ -161,8 +161,8 @@ return {
       }
 
       metals_config.init_options.statusBarProvider = "off"
-      -- metals_config.capabilities = capabilities
-      metals_config.on_attach = function(client, buffer)
+      metals_config.capabilities = capabilities
+      metals_config.on_attach = function(_, buffer)
         require("metals").setup_dap()
         vim.keymap.set(
           "n",
