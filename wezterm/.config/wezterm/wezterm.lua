@@ -13,7 +13,7 @@ config = {
   enable_tab_bar = false,
   window_close_confirmation = "NeverPrompt",
   window_decorations = "TITLE | RESIZE",
-  window_padding = { left = 0, top = 0, right = 0, bottom = 0 },
+  window_padding = { left = 5, top = 5, right = 5, bottom = 5 },
   color_scheme = "tokyonight",
   font_size = 12,
   font = wezterm.font(jetbrains_font, { weight = "Regular" }),
