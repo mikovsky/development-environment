@@ -7,15 +7,16 @@ local jetbrains_font = "JetBrains Mono"
 local meslo_font = "MesloLGS Nerd Font Mono"
 
 config = {
-	enable_wayland = false,
-	automatically_reload_config = true,
-	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-	enable_tab_bar = false,
-	window_close_confirmation = "NeverPrompt",
-	window_decorations = "TITLE | RESIZE",
-	color_scheme = "tokyonight_night",
-	font_size = 12,
-	font = wezterm.font(jetbrains_font, { weight = "Regular" }),
+  enable_wayland = false,
+  automatically_reload_config = true,
+  harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+  enable_tab_bar = false,
+  window_close_confirmation = "NeverPrompt",
+  window_decorations = "TITLE | RESIZE",
+  window_padding = { left = 0, top = 0, right = 0, bottom = 0 },
+  color_scheme = "tokyonight",
+  font_size = 12,
+  font = wezterm.font(jetbrains_font, { weight = "Regular" }),
 }
 
 return config
