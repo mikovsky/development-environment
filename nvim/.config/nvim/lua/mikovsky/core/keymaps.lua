@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", "<Esc>", ":nohl<CR>", { desc = "Clear search highlights" })
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
-vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
 
 -- vertical movement
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
