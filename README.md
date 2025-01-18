@@ -91,3 +91,15 @@
 ### Spotify setup
 1. Install Spotify Launcher so it can updates itself without pacman `yay -S spotify-launcher`
 2. Before running it make sure that locale is set accordingly to documentation here: [Arch Linux - Documentation](https://wiki.archlinux.org/title/Installation_guide#Localization)
+
+### Timeshift setup
+1. `paru -S timeshift` - install Timeshift for creating snapshots, restoring from snapshots, etc.
+2. `paru -S grub-btrfs` - install grub-btrfs, so we can load snapshots from grub bootloader
+   2a. `sudo /etc/grub.d/41_snapshots-btrfs` - manually generate grub entries based on existing snapshots
+   2b. `grub-mkconfig -o /boot/grub/grub.cfg` - generate grub config with these snapshots
+3. `paru -S inotify-tools` - tool for notifying other system services when some file changes
+4. `sudo systemctl edit --full grub-btrfsd` - update grub-btrfsd system daemon
+5. `ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto` - update line with ExecStart to this, so it can pickup Timeshift snapshots automatically (C-O) (Enter) to save
+6. `sudo systemctl enable grub-btrfsd`
+7. `sudo systemctl start grub-btrfsd`
+8. `paru -S timeshift-autosnap` - install tool that will automatically create snapshots when updating packages via pacman
