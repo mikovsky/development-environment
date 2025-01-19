@@ -60,10 +60,7 @@
 
 ### tmux setup
 1. Install TPM `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-2. (Optional) Install Catppuccin Theme
-   - `mkdir -p ~/.config/tmux/plugins/catppuccin`
-   - `git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux`
-3. Run `<C-s>` + `shift + i` to install plugins using TPM
+2. Run `<C-s>` + `shift + i` to install plugins using TPM
 
 ### JDK setup
 1. Install SDKMAN `curl -s "https://get.sdkman.io" | bash`
@@ -77,19 +74,19 @@
 4. Remove cs from home directory `rm ~/cs`
 
 ### Node setup
-1. Install nvm using `yay -S nvm`
+1. Install nvm using `paru -S nvm`
 2. Source nvm using `echo 'source /usr/share/nvm/init-nvm.sh' >> ~/.zshrc`
 3. Restart terminal
 4. Install LTS using `nvm install --lts`
 5. Check installation using `node -v` i `npm --v`
 
 ### Bluetooth setup
-1. Install bluez standard protocol `yay -S bluez bluez-utils`
+1. Install bluez standard protocol `paru -S bluez bluez-utils`
 2. Enable Bluetooth service `sudo systemctl enable bluetooth.service`
 3. Start Bluetooth service `sudo systemctl start bluetooth.service`
 
 ### Spotify setup
-1. Install Spotify Launcher so it can updates itself without pacman `yay -S spotify-launcher`
+1. Install Spotify Launcher so it can updates itself without pacman `paru -S spotify-launcher`
 2. Before running it make sure that locale is set accordingly to documentation here: [Arch Linux - Documentation](https://wiki.archlinux.org/title/Installation_guide#Localization)
 
 ### Timeshift setup
