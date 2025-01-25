@@ -58,6 +58,7 @@ return {
         ts_ls = {},
         pyright = {},
         gopls = {},
+        pbls = {},
       },
     },
     config = function(_, opts)
@@ -158,6 +159,14 @@ return {
         showInferredType = true,
         superMethodLensesEnabled = true,
         testUserInterface = "Test Explorer",
+        serverProperties = {
+          "-Xmx4g",
+          "-Xms1g",
+          "-XX:+UseG1GC",
+          "-Xss2m",
+          "-XX:MetaspaceSize=1g",
+          "-XX:MaxMetaspaceSize=2g",
+        },
       }
 
       metals_config.init_options.statusBarProvider = "off"
