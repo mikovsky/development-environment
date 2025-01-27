@@ -18,6 +18,9 @@ alias l="ls -alhF -v"
 alias ll="ls -lhF -v"
 alias vim="nvim"
 
+# Keybinds
+bindkey -s '^f' 'tmux-sessionizer\n'
+
 # Initialize ssh-agent
 if [ -z "$SSH_AGENT_PID" ]; then
     ssh-add ~/.ssh/github &>/dev/null
@@ -25,3 +28,7 @@ fi
 
 # PATH configuration
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export PATH="$SSH_AUTH_SOCK:$PATH"
+
+export LOCAL_BIN="$HOME/.local/bin"
+export PATH="$LOCAL_BIN:$PATH"
