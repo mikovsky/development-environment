@@ -20,12 +20,48 @@ hydrate() {
     fi
 }
 
+# Konfiguracja dla różnych ścieżek
+declare -A path_configs=(
+    ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
+    ["$HOME/dotfiles"]="0 3"                   # mindepth=0 maxdepth=3
+    ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
+    ["$HOME/workspace/tools"]="1 1"            # mindepth=1 maxdepth=1
+)
+
+excluded_patterns=(
+    '.git'         # git directories
+    'node_modules' # node modules
+    '.next'        # Next.js build directory
+    'target'       # Rust/Java build directory
+    'build'        # Generic build directory
+    'dist'         # Distribution directory
+)
+
+get_find_results() {
+    local results=""
+    local exlude_args=""
+
+    # Budowanie argumentów wykluczających
+    for pattern in "${excluded_patterns[@]}"; do
+        exclude_args+=" -not -path '*/$pattern/*'"
+    done
+
+    for path in "${!path_configs[@]}"; do
+        if [[ -d "$path" ]]; then
+            read -r mindepth maxdepth <<<"${path_configs[$path]}"
+            # Używamy eval, ponieważ exclude_args zawiera wzorce, które muszą być interpretowane przez shell
+            results+=$(eval find \"$path\" -mindepth \"$mindepth\" -maxdepth \"$maxdepth\" -type d $exclude_args)$'\n'
+        fi
+    done
+
+    echo "$results" | sed '/^$/d' # Usuwa puste linie
+}
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # If someone wants to make this extensible, i'll accept
-    # PR
-    selected=$(find ~/workspace ~/dotfiles -mindepth 1 -type d | fzf)
+    # selected=$(find ~/workspace ~/workspace/sources ~/workspace/tools ~/workspace/sources/monorepo ~/dotfiles -mindepth 1 -maxdepth 2 -type d | fzf)
+    selected=$(get_find_results | fzf)
 fi
 
 if [[ -z $selected ]]; then
