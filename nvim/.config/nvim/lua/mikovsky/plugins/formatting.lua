@@ -12,6 +12,7 @@ return {
         json = { "prettier" },
         yaml = { "prettier" },
         markdown = { "prettier" },
+        bash = { "shfmt" },
       },
       format_on_save = {
         enabled = false,

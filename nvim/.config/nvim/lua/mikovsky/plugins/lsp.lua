@@ -24,6 +24,8 @@ return {
           "ts_ls",
           "pyright",
           "gopls",
+          "pbls",
+          "bashls",
         },
       })
     end,
@@ -37,6 +39,7 @@ return {
           "black",
           "isort",
           "prettier",
+          "shfmt",
         },
       })
     end,
@@ -59,6 +62,7 @@ return {
         pyright = {},
         gopls = {},
         pbls = {},
+        bashls = {},
       },
     },
     config = function(_, opts)
