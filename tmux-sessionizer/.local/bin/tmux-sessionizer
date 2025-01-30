@@ -22,8 +22,11 @@ hydrate() {
 
 # Konfiguracja dla różnych ścieżek
 declare -A path_configs=(
+    # personal
+    ["$HOME/dotfiles"]="0 0"  # mindepth=0 maxdepth=0
+    ["$HOME/workspace"]="0 1" # mindepth=0 maxdepth=1
+    # work
     ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
-    ["$HOME/dotfiles"]="0 3"                   # mindepth=0 maxdepth=3
     ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
     ["$HOME/workspace/tools"]="1 1"            # mindepth=1 maxdepth=1
 )
@@ -44,6 +47,7 @@ get_find_results() {
     # Budowanie argumentów wykluczających
     for pattern in "${excluded_patterns[@]}"; do
         exclude_args+=" -not -path '*/$pattern/*'"
+        exclude_args+=" -not -path '*/$pattern'"
     done
 
     for path in "${!path_configs[@]}"; do
