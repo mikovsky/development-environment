@@ -104,12 +104,6 @@ return {
           options.desc = "Smart rename"
           vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, options)
 
-          options.desc = "Show buffer diagnostics"
-          vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", options)
-
-          options.desc = "Show line diagnostics"
-          vim.keymap.set("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", options)
-
           options.desc = "Show diagnostic"
           vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, options)
 
