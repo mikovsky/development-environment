@@ -39,6 +39,7 @@ return {
           "black",
           "isort",
           "prettier",
+          "prettierd",
           "shfmt",
         },
       })
