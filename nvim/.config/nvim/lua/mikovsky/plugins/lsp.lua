@@ -165,12 +165,13 @@ return {
         superMethodLensesEnabled = true,
         testUserInterface = "Test Explorer",
         serverProperties = {
-          "-Xmx4g",
-          "-Xms1g",
+          "-Xms4G",
+          "-Xmx8G",
+          "-XX:ReservedCodeCacheSize=512m",
+          "-XX:MaxMetaspaceSize=2G",
           "-XX:+UseG1GC",
-          "-Xss2m",
-          "-XX:MetaspaceSize=1g",
-          "-XX:MaxMetaspaceSize=2g",
+          "-XX:+UseStringDeduplication",
+          "-XX:+OptimizeStringConcat",
         },
       }
 
