@@ -152,21 +152,14 @@ return {
       local metals_config = metals.bare_config()
 
       metals_config.settings = {
+        bloopSbtAlreadyInstalled = true,
+        defaultBspToBuildTool = true,
         enableSemanticHighlighting = true,
         showImplicitArguments = true,
         showImplicitConversionsAndClasses = true,
         showInferredType = true,
         superMethodLensesEnabled = true,
         testUserInterface = "Test Explorer",
-        serverProperties = {
-          "-Xms4G",
-          "-Xmx8G",
-          "-XX:ReservedCodeCacheSize=512m",
-          "-XX:MaxMetaspaceSize=2G",
-          "-XX:+UseG1GC",
-          "-XX:+UseStringDeduplication",
-          "-XX:+OptimizeStringConcat",
-        },
       }
 
       metals_config.init_options.statusBarProvider = "off"
