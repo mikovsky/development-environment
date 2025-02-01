@@ -26,6 +26,7 @@ return {
           "gopls",
           "pbls",
           "bashls",
+          "clangd",
         },
       })
     end,
@@ -64,6 +65,7 @@ return {
         gopls = {},
         pbls = {},
         bashls = {},
+        clangd = {},
       },
     },
     config = function(_, opts)
