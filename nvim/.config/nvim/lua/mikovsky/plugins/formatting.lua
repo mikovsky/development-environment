@@ -14,9 +14,7 @@ return {
         markdown = { "prettier", "prettierd" },
         bash = { "shfmt" },
       },
-      format_on_save = {
-        enabled = false,
-      },
+      format_on_save = {},
       notify_on_error = true,
     },
     init = function()
