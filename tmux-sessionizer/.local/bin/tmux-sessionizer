@@ -24,7 +24,7 @@ hydrate() {
 declare -A path_configs=(
     # personal
     ["$HOME/dotfiles"]="0 0"  # mindepth=0 maxdepth=0
-    ["$HOME/workspace"]="0 1" # mindepth=0 maxdepth=1
+    ["$HOME/personal"]="0 2" # mindepth=0 maxdepth=1
     # work
     ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
     ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
