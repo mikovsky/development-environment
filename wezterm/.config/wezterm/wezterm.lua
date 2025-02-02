@@ -20,7 +20,8 @@ config.window_decorations = "TITLE | RESIZE"
 config.window_padding = { left = 5, top = 5, right = 5, bottom = 5 }
 
 if wezterm.target_triple == OS.MACOS then
-  config.font_size = 14
+  config.dpi = 144
+  config.font_size = 15
 end
 
 if wezterm.target_triple == OS.LINUX then
