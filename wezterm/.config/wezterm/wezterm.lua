@@ -1,22 +1,31 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
----@diagnostic disable-next-line: unused-local
-local jetbrains_font = "JetBrains Mono"
----@diagnostic disable-next-line: unused-local
-local meslo_font = "MesloLGS Nerd Font Mono"
-
-config = {
-  enable_wayland = false,
-  automatically_reload_config = true,
-  harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-  enable_tab_bar = false,
-  window_close_confirmation = "NeverPrompt",
-  window_decorations = "TITLE | RESIZE",
-  window_padding = { left = 5, top = 5, right = 5, bottom = 5 },
-  color_scheme = "tokyonight",
-  font_size = 11,
-  font = wezterm.font(jetbrains_font, { weight = "Regular" }),
+local FONTS = {
+  jetbrains = "JetBrains Mono",
+  meslo = "MesloLGS Nerd Font Mono",
 }
+local OS = {
+  MACOS = "aarch64-apple-darwin",
+  LINUX = "x86_64-unknown-linux-gnu",
+}
+
+config.automatically_reload_config = true
+config.color_scheme = "tokyonight"
+config.enable_tab_bar = false
+config.font = wezterm.font(FONTS.meslo, { weight = "Regular" })
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+config.window_close_confirmation = "NeverPrompt"
+config.window_decorations = "TITLE | RESIZE"
+config.window_padding = { left = 5, top = 5, right = 5, bottom = 5 }
+
+if wezterm.target_triple == OS.MACOS then
+  config.font_size = 14
+end
+
+if wezterm.target_triple == OS.LINUX then
+  config.enable_wayland = false
+  config.font_size = 12
+end
 
 return config
