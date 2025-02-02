@@ -3,14 +3,9 @@ return {
     "folke/snacks.nvim",
     opts = {
       explorer = {},
-      picker = {
-        sources = {
-          explorer = {
-            hidden = true,
-          },
-        },
-      },
+      picker = { sources = { explorer = { hidden = true } } },
       lazygit = {},
+      indent = { animate = { enabled = false }, scope = { enabled = false } },
     },
     config = function(_, opts)
       local snacks = require("snacks")
