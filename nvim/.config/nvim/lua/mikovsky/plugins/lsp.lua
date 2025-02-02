@@ -42,6 +42,7 @@ return {
           "prettier",
           "prettierd",
           "shfmt",
+          "codelldb",
         },
       })
     end,

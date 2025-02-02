@@ -19,6 +19,32 @@ local setup_scala = function(dap)
   }
 end
 
+local setup_cpp = function(dap)
+  dap.adapters.codelldb = {
+    type = "executable",
+    command = "codelldb",
+  }
+
+  local configurations = {
+    {
+      name = "Launch file",
+      type = "codelldb",
+      request = "launch",
+      program = function()
+        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+      end,
+      args = function()
+        return vim.split(vim.fn.input("Arguments: "), ";")
+      end,
+      cwd = "${workspaceFolder}",
+      stopOnEntry = false,
+    },
+  }
+
+  dap.configurations.c = configurations
+  dap.configurations.cpp = configurations
+end
+
 return {
   "mfussenegger/nvim-dap",
   dependencies = {
@@ -27,6 +53,8 @@ return {
   },
   config = function()
     local dap = require("dap")
+    setup_cpp(dap)
+
     local dapui = require("dapui")
 
     -- Keymaps for Debugger
@@ -41,8 +69,10 @@ return {
     end, { desc = "Debug: Set Breakpoint with Condition" })
 
     -- DAP UI setup
+    ---@diagnostic disable-next-line: missing-fields
     dapui.setup({
       icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
+      ---@diagnostic disable-next-line: missing-fields
       controls = {
         icons = {
           pause = "⏸",
