@@ -32,7 +32,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "NeoTree: Toggle Explorer" })
-    vim.keymap.set("n", "<leader>fe", "<cmd>Neotree reveal<CR>", { desc = "NeoTree: Toggle file in Explorer" })
+    vim.keymap.set("n", "<leader>se", "<cmd>Neotree toggle<CR>", { desc = "NeoTree: Toggle Explorer" })
+    vim.keymap.set("n", "<leader>sfe", "<cmd>Neotree reveal<CR>", { desc = "NeoTree: Toggle file in Explorer" })
   end,
 }
