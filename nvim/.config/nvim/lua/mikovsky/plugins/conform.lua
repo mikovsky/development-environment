@@ -13,6 +13,7 @@ return {
         yaml = { "prettier", "prettierd" },
         markdown = { "prettier", "prettierd" },
         bash = { "shfmt" },
+        proto = { "protols" },
       },
       format_on_save = {},
       notify_on_error = true,

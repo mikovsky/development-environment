@@ -20,13 +20,12 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls",
-          "ts_ls",
-          "pyright",
-          "gopls",
-          "pbls",
-          "bashls",
-          "clangd",
+          "lua_ls", -- Lua
+          "ts_ls", -- TypeScript/JavaScript
+          "pyright", -- Python
+          "gopls", -- Go
+          "bashls", -- Bash
+          "clangd", -- C/C++
         },
       })
     end,
@@ -36,13 +35,13 @@ return {
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
-          "stylua",
-          "black",
-          "isort",
-          "prettier",
-          "prettierd",
-          "shfmt",
-          "codelldb",
+          "stylua", -- Lua
+          "black", -- Python
+          "isort", -- Python
+          "prettier", -- TypeScript/JavaScript
+          "prettierd", -- TypeScript/JavaScript
+          "shfmt", -- Bash
+          "codelldb", -- C/C++
         },
       })
     end,
@@ -60,13 +59,13 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        lua_ls = {},
-        ts_ls = {},
-        pyright = {},
-        gopls = {},
-        pbls = {},
-        bashls = {},
-        clangd = {},
+        lua_ls = {}, -- Lua
+        ts_ls = {}, -- TypeScript/JavaScript
+        pyright = {}, -- Python
+        gopls = {}, -- Go
+        bashls = {}, -- Bash
+        clangd = { filetypes = { "c", "cpp" } }, -- C/C++
+        protols = {}, -- Protocol Buffers
       },
     },
     config = function(_, opts)
