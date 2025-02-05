@@ -2,7 +2,11 @@ return {
   {
     "scalameta/nvim-metals",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      { "nvim-lua/plenary.nvim" },
+      {
+        "j-hui/fidget.nvim",
+        opts = { notification = { window = { winblend = 0 } } },
+      },
     },
     ft = { "scala", "sbt", "java" },
     opts = function()
@@ -27,13 +31,11 @@ return {
         showImplicitConversionsAndClasses = true,
         showInferredType = true,
         superMethodLensesEnabled = true,
-        testUserInterface = "Test Explorer",
       }
 
       metals_config.init_options.statusBarProvider = "off"
       metals_config.capabilities = capabilities
       metals_config.on_attach = function(_, buffer)
-        require("metals").setup_dap()
         vim.keymap.set(
           "n",
           "gs",
