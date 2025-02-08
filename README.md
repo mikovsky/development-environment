@@ -100,3 +100,4 @@
 7. `sudo systemctl enable grub-btrfsd`
 8. `sudo systemctl start grub-btrfsd`
 9. `paru -S timeshift-autosnap` - install tool that will automatically create snapshots when updating packages via pacman
+10. Set `updateGrub=false` in file `/etc/timeshift-autosnap.conf` to prevent interference with `grub-btrfsd`
