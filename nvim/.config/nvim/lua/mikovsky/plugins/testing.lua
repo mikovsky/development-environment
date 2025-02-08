@@ -9,6 +9,7 @@ return {
       "mikovsky/neotest-scala",
     },
     config = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("neotest").setup({
         adapters = {
           require("neotest-scala")({
@@ -55,9 +56,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      -- vim.g['test#scala#runner'] = 'blooptest'
-      vim.g["test#scala#runner"] = "sbttest"
-
+      vim.g["test#scala#runner"] = "sbttest" -- "blooptest"
       vim.g["test#strategy"] = "neovim"
 
       vim.keymap.set("n", "<leader>vtn", ":TestNearest<CR>", { desc = "[T]ests: Run Nearest Test" })
