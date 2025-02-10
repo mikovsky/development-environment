@@ -12,8 +12,6 @@ return {
         ensure_installed = {
           "lua_ls", -- Lua
           "ts_ls", -- TypeScript/JavaScript
-          "pyright", -- Python
-          "gopls", -- Go
           "bashls", -- Bash
           "clangd", -- C/C++
         },
@@ -26,8 +24,6 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "stylua", -- Lua
-          "black", -- Python
-          "isort", -- Python
           "prettier", -- TypeScript/JavaScript
           "prettierd", -- TypeScript/JavaScript
           "shfmt", -- Bash
@@ -51,8 +47,6 @@ return {
       servers = {
         lua_ls = {}, -- Lua
         ts_ls = {}, -- TypeScript/JavaScript
-        pyright = {}, -- Python
-        gopls = {}, -- Go
         bashls = {}, -- Bash
         clangd = { filetypes = { "c", "cpp" } }, -- C/C++
         protols = {}, -- Protocol Buffers
