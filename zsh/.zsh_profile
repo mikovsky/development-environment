@@ -1,0 +1,40 @@
+# History configuration
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# Alias configuration
+alias l="ls -alhF -v"
+alias ll="ls -lhF -v"
+alias vim="nvim"
+
+# Keybinds
+bindkey -s '^f' 'tmux-sessionizer\n'
+
+# Environment variables
+export XDG_CONFIG_HOME=$HOME/.config
+export VIM="nvim"
+export GIT_EDITOR=$VIM
+export DOTFILES=$HOME/.dotfiles
+
+# PATH setup
+export LOCAL_BIN="$HOME/.local/bin"
+export PATH="$LOCAL_BIN:$PATH"
+
+export COURSIER_HOME="$HOME/.local/share/coursier"
+export PATH="$COURSIER_HOME:$PATH"
+
+export LOCAL_SCRIPTS="$HOME/.local/scripts"
+export PATH="$LOCAL_SCRIPTS:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
