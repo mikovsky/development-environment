@@ -1,0 +1,15 @@
+# Monitor - resolution & refresh rate
+xrandr --output DP-4 --mode 3840x2160 --rate 144
+
+# Monitor - scaling
+echo "Xft.dpi: 120" | xrdb -merge
+
+# Keyboard - repeat speed & repeat delay
+(sleep 2 && xset r rate 250 35) &
+
+# Mouse - acceleration & sensitivity
+xinput --set-prop "9" "libinput Accel Profile Enabled" 0, 1
+xinput --set-prop "9" "libinput Accel Speed" 0
+
+# Force dark theme
+export GTK_THEME=Adwaita:dark
