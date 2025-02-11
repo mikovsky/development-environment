@@ -134,6 +134,7 @@ fi
 print_status "Setting up i3"
 sudo apt install -y i3 i3status network-manager-gnome blueman
 sudo apt install -y flameshot peek picom rofi
+sudo apt install -y pulseaudio-utils playerctl
 check_error "Failed to install i3 and related packages"
 
 # Konfiguracja GTK dark theme

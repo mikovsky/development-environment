@@ -84,6 +84,7 @@ sudo install lazygit -D -t /usr/local/bin/` - install lazygit
 
 1. `sudo apt install -y i3 i3status network-manager-gnome blueman`
 1. `sudo apt install -y flameshot peek picom rofi`
+1. `sudo apt install -y pulseaudio-utils playerctl`
 1. Add this to files `$HOME/.config/gtk-4.0/settings.ini` and `$HOME/.config/gtk-3.0/settings.ini`:
 
 ```
