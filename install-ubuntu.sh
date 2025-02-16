@@ -78,8 +78,6 @@ print_status "Setting up Coursier"
 if [ ! -f "$HOME/.local/share/coursier/bin/cs" ]; then
     curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d >cs && chmod +x cs && ./cs setup
     check_error "Failed to install Coursier"
-    grep -q "COURSIER_HOME" "$HOME/.zshrc" || echo 'export COURSIER_HOME="$HOME/.local/share/coursier"' >>"$HOME/.zshrc"
-    grep -q "PATH.*COURSIER_HOME" "$HOME/.zshrc" || echo 'export PATH="$PATH:$COURSIER_HOME/bin"' >>"$HOME/.zshrc"
     rm -f "$HOME/cs"
 fi
 
@@ -137,7 +135,7 @@ sudo apt install -y flameshot peek picom rofi
 sudo apt install -y pulseaudio-utils playerctl
 check_error "Failed to install i3 and related packages"
 
-# Konfiguracja GTK dark theme
+# Setup GTK dark theme
 mkdir -p "$HOME/.config/gtk-4.0" "$HOME/.config/gtk-3.0"
 echo '[Settings]
 gtk-application-prefer-dark-theme=1' | tee "$HOME/.config/gtk-4.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini" >/dev/null
@@ -145,14 +143,9 @@ gtk-application-prefer-dark-theme=1' | tee "$HOME/.config/gtk-4.0/settings.ini" 
 # Setup dotfiles
 print_status "Setting up dotfiles"
 if [ ! -d "$HOME/personal/dotfiles" ]; then
-    # Załóżmy że repozytorium jest na GitHubie, podmień URL na właściwy
-    git clone https://github.com/TWÓJ_USERNAME/dotfiles.git "$HOME/personal/dotfiles"
+    git clone https://github.com/mikovsky/.dotfiles.git "$HOME/.dotfiles"
     check_error "Failed to clone dotfiles repository"
-
-    # Przejdź do katalogu z dotfiles
-    cd "$HOME/personal/dotfiles"
-
-    # Wykonaj stow dla każdego katalogu
+    cd "$HOME/.dotfiles"
     for dir in bin i3 nvim tmux wezterm zsh; do
         if [ -d "$dir" ]; then
             stow -v "$dir"
