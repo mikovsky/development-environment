@@ -24,7 +24,7 @@ export LOCAL_BIN="$HOME/.local/bin"
 export PATH="$LOCAL_BIN:$PATH"
 
 export COURSIER_HOME="$HOME/.local/share/coursier"
-export PATH="$COURSIER_HOME:$PATH"
+export PATH="$COURSIER_HOME/bin:$PATH"
 
 export LOCAL_SCRIPTS="$HOME/.local/scripts"
 export PATH="$LOCAL_SCRIPTS:$PATH"
