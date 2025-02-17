@@ -14,6 +14,7 @@ return {
           "ts_ls", -- TypeScript/JavaScript
           "bashls", -- Bash
           "clangd", -- C/C++
+          "pyright", -- Python
         },
       })
     end,
@@ -28,6 +29,8 @@ return {
           "prettierd", -- TypeScript/JavaScript
           "shfmt", -- Bash
           "codelldb", -- C/C++
+          "isort", -- Python
+          "black", -- Python
         },
       })
     end,
