@@ -53,6 +53,7 @@ return {
         bashls = {}, -- Bash
         clangd = { filetypes = { "c", "cpp" } }, -- C/C++
         protols = {}, -- Protocol Buffers
+        yamlls = {}, -- YAML
       },
     },
     config = function(_, opts)
