@@ -204,6 +204,13 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 
+exec_always --no-startup-id \
+for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); \
+do \
+xinput --set-prop $id "libinput Accel Profile Enabled" 0, 1; \
+xinput --set-prop $id "libinput Accel Speed" 0; \
+done
+
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec peek
 bindsym $mod+d exec rofi -show drun
