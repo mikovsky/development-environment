@@ -8,8 +8,8 @@ echo "Xft.dpi: 120" | xrdb -merge
 (sleep 2 && xset r rate 250 40) &
 
 # Mouse - acceleration & sensitivity
-xinput --set-prop "14" "libinput Accel Profile Enabled" 0, 1
-xinput --set-prop "14" "libinput Accel Speed" 0
+xinput --set-prop "9" "libinput Accel Profile Enabled" 0, 1
+xinput --set-prop "9" "libinput Accel Speed" 0
 
 # Force dark theme
 export GTK_THEME=Adwaita:dark
