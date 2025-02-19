@@ -211,7 +211,20 @@ xinput --set-prop $id "libinput Accel Profile Enabled" 0, 1; \
 xinput --set-prop $id "libinput Accel Speed" 0; \
 done
 
+set $Locker i3lock & sleep 1
+
+set $mode_system System (l) lock, (e) logout, (r) reboot, (S) shutdown.
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+q mode "$mode_system"
+
 bindsym Print exec flameshot gui
 bindsym Shift+Print exec peek
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+q exec --no-startup-id i3lock
