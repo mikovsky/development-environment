@@ -30,10 +30,10 @@ vim.keymap.set("x", "<leader>P", '"_dp')
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- window management
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "[W]indow [V]ertical split" })
+vim.keymap.set("n", "<leader>wh", "<C-w>s", { desc = "[W]indow [H]orizontally split" })
+vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "[W]indow [E]qual split" })
+vim.keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "[W]indow - exit" })
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
@@ -41,11 +41,11 @@ vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decreas
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+vim.keymap.set("n", "<leader>bto", "<cmd>tabnew<CR>", { desc = "TAB - Open new tab" })
+vim.keymap.set("n", "<leader>btx", "<cmd>tabclose<CR>", { desc = "TAB - Close current tab" })
+vim.keymap.set("n", "<leader>btn", "<cmd>tabn<CR>", { desc = "TAB - Go to next tab" })
+vim.keymap.set("n", "<leader>btp", "<cmd>tabp<CR>", { desc = "TAB - Go to previous tab" })
+vim.keymap.set("n", "<leader>btf", "<cmd>tabnew %<CR>", { desc = "TAB - Open current buffer in new tab" })
 
 -- scala
 local function run_scala_file()

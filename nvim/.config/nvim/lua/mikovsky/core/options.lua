@@ -24,6 +24,7 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.clipboard:append("unnamedplus")
+vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.splitright = true
