@@ -28,6 +28,8 @@ return {
             ".vscode/",
             "venv/",
             "build/",
+            ".mvn",
+            ".settings",
           },
           path_display = { "smart" },
           mappings = {
