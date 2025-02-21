@@ -12,6 +12,11 @@ return {
         options = {
           icons_enabled = true,
           theme = "tokyonight",
+          disabled_filetypes = {
+            statusline = {
+              "neo-tree",
+            },
+          },
         },
         sections = {
           lualine_z = { "location", get_total_lines_and_characters_in_line },
