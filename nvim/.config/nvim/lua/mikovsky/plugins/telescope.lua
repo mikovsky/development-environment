@@ -34,6 +34,8 @@ return {
           path_display = { "smart" },
           mappings = {
             i = {
+              ["<C-n>"] = actions.cycle_history_next,
+              ["<C-p>"] = actions.cycle_history_prev,
               ["<C-k>"] = actions.move_selection_previous,
               ["<C-j>"] = actions.move_selection_next,
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -53,8 +55,11 @@ return {
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind files in cwd" })
       vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "[F]ind string in cwd" })
       vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "[F]ind string under cursor in cwd" })
-      vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[F]ind todos" })
       vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { desc = "[F]ind string in buffer" })
+      vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
+      vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[F]ind [O]ld Files" })
+      vim.keymap.set("n", "<leader>feb", builtin.buffers, { desc = "[F]ind [E]xisting [B]uffers" })
+      vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[F]ind todos" })
     end,
   },
   {
