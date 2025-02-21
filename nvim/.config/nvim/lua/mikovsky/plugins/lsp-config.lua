@@ -25,7 +25,10 @@ return {
     "mfussenegger/nvim-dap",
   },
   {
-    "mfussenegger/nvim-jdtls",
+    "nvim-java/nvim-java",
+    config = function()
+      require("java").setup()
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -43,7 +46,10 @@ return {
 
       -- setup the typescript language server
       lspconfig.ts_ls.setup({})
-      
+
+      -- setup the java language server
+      lspconfig.jdtls.setup({})
+
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(event)
