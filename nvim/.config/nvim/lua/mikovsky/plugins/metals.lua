@@ -8,7 +8,7 @@ return {
         opts = { notification = { window = { winblend = 0 } } },
       },
     },
-    ft = { "scala", "sbt", "java" },
+    ft = { "scala", "sbt" },
     opts = function()
       local metals = require("metals")
       local capabilities = require("blink.cmp").get_lsp_capabilities()
