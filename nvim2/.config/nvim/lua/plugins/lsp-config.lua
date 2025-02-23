@@ -20,6 +20,7 @@ return {
     opts = {
       lsp_to_install = {
         bashls = {},
+        gopls = {},
         lua_ls = {},
         pyright = {},
         tailwindcss = {},

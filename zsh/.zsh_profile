@@ -29,6 +29,9 @@ export PATH="$COURSIER_HOME/bin:$PATH"
 export LOCAL_SCRIPTS="$HOME/.local/scripts"
 export PATH="$LOCAL_SCRIPTS:$PATH"
 
+export GO_PATH="/usr/local/go"
+export PATH="$GO_PATH/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
