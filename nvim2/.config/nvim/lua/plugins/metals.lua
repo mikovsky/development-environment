@@ -36,6 +36,7 @@ return {
       metals_config.init_options.statusBarProvider = "off"
       metals_config.capabilities = capabilities
       metals_config.on_attach = function(_, buffer)
+        metals.setup_dap()
         vim.keymap.set(
           "n",
           "gs",
