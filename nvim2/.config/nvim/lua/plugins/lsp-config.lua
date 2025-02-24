@@ -16,26 +16,33 @@ return {
         "j-hui/fidget.nvim",
         opts = {},
       },
-    },
-    opts = {
-      lsp_to_install = {
-        bashls = {},
-        gopls = {},
-        lua_ls = {},
-        pyright = {},
-        tailwindcss = {},
-        ts_ls = {},
-        yamlls = {},
+      {
+        "nvim-java/nvim-java",
+        config = function()
+          require("java").setup({
+            settings = {
+              java = {
+                configuration = {
+                  runtimes = {
+                    {
+                      name = "Java 17",
+                      path = "$HOME/.sdkman/candidates/java/17.0.13-amzn",
+                      default = false,
+                    },
+                    {
+                      name = "Java 23",
+                      path = "$HOME/.sdkman/candidates/java/23.0.2-amzn",
+                      default = true,
+                    },
+                  },
+                },
+              },
+            },
+          })
+        end,
       },
-      tools_to_install = {
-        black = {},
-        isort = {},
-        prettierd = {},
-        shfmt = {},
-        stylua = {},
-      },
     },
-    config = function(_, opts)
+    config = function()
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(event)
@@ -66,20 +73,29 @@ return {
       require("mason").setup({})
 
       require("mason-lspconfig").setup({
-        ensure_installed = vim.tbl_keys(opts.lsp_to_install),
+        ensure_installed = { "bashls", "gopls", "lua_ls", "pyright", "tailwindcss", "ts_ls", "yamlls" },
         automatic_installation = false,
       })
 
       require("mason-tool-installer").setup({
-        ensure_installed = vim.tbl_keys(opts.tools_to_install),
+        ensure_installed = { "black", "isort", "prettierd", "shfmt", "stylua" },
       })
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      for server, config in pairs(opts.lsp_to_install) do
-        config.capabilities = capabilities
-        lspconfig[server].setup(config)
-      end
+
+      lspconfig.bashls.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({ capabilities = capabilities })
+      lspconfig.groovyls.setup({
+        capabilities = capabilities,
+        cmd = { "java", "-jar", "/home/mike/.local/share/nvim/mason/packages/groovy-language-server" },
+      })
+      lspconfig.jdtls.setup({ capabilities = capabilities })
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.pyright.setup({ capabilities = capabilities })
+      lspconfig.tailwindcss.setup({ capabilities = capabilities })
+      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      lspconfig.yamlls.setup({ capabilities = capabilities })
     end,
   },
 }
