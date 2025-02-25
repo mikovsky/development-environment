@@ -8,21 +8,12 @@ return {
         opts = { notification = { window = { winblend = 0 } } },
       },
     },
-    ft = { "scala", "sbt", "java" },
+    ft = { "scala", "sbt" },
     opts = function()
-      local metals = require("metals")
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      local metals_config = require("metals").bare_config()
 
-      vim.keymap.set("n", "<leader>mw", function()
-        metals.hover_worksheet()
-      end, { desc = "Metals: Hover Worksheet" })
-
-      vim.keymap.set("n", "<leader>mt", function()
-        require("telescope").extensions.metals.commands()
-      end, { desc = "Metals: Show Commands" })
-
-      local metals_config = metals.bare_config()
-
+      metals_config.init_options.statusBarProvider = "off"
+      metals_config.capabilities = require("blink.cmp").get_lsp_capabilities()
       metals_config.settings = {
         bloopSbtAlreadyInstalled = true,
         defaultBspToBuildTool = true,
@@ -33,15 +24,18 @@ return {
         superMethodLensesEnabled = true,
       }
 
-      metals_config.init_options.statusBarProvider = "off"
-      metals_config.capabilities = capabilities
       metals_config.on_attach = function(_, buffer)
-        vim.keymap.set(
-          "n",
-          "gs",
-          "<cmd>MetalsGotoSuperMethod<CR>",
-          { desc = "Metals: Goto Super Method", buffer = buffer, silent = true }
-        )
+        local function map(mode, key, callback, desc)
+          vim.keymap.set(mode, key, callback, { buffer = buffer, silent = true, desc = desc })
+        end
+
+        local supermethod_cmd = "<cmd>MetalsGotoSuperMethod<CR>"
+        local worksheet_cmd = "<cmd>lua require('metals').hover_worksheet()<CR>"
+        local commands_cmd = "<cmd>lua require('telescope').extensions.metals.commands()<CR>"
+
+        map("n", "gs", supermethod_cmd, "Metals: Goto Super Method")
+        map("n", "<leader>mw", worksheet_cmd, "Metals: Hover Worksheet")
+        map("n", "<leader>mt", commands_cmd, "Metals: Show Commands")
       end
 
       return metals_config
