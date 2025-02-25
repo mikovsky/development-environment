@@ -4,7 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black", "isort" },
+        python = { "isort", "black" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         css = { "prettier" },
@@ -14,7 +14,7 @@ return {
         markdown = { "prettier" },
         bash = { "shfmt" },
       },
-      format_on_save = {},
+      format_on_save = false,
       notify_on_error = true,
     },
     init = function()

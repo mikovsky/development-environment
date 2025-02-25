@@ -14,6 +14,7 @@ return {
           "ts_ls",
           "bashls",
           "pyright",
+          "yamlls",
         },
       })
     end,
