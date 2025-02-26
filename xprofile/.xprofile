@@ -4,8 +4,5 @@ xrandr --output DP-4 --mode 3840x2160 --rate 144
 # Monitor - scaling
 echo "Xft.dpi: 120" | xrdb -merge
 
-# Keyboard - repeat speed & repeat delay
-(sleep 2 && xset r rate 300 40) &
-
 # Force dark theme
 export GTK_THEME=Adwaita:dark

@@ -211,6 +211,8 @@ xinput --set-prop $id "libinput Accel Profile Enabled" 0, 1; \
 xinput --set-prop $id "libinput Accel Speed" 0; \
 done
 
+exec_always --no-startup-id xset r rate 300 40
+
 set $Locker i3lock & sleep 1
 
 set $mode_system System (l) lock, (e) logout, (r) reboot, (S) shutdown.
