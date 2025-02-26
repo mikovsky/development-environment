@@ -62,4 +62,19 @@ return {
       { "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open lazy git" },
     },
   },
+
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+    },
+    config = function()
+      local function open_neogit()
+        require("neogit").open({ kind = "replace" })
+      end
+
+      vim.keymap.set("n", "<leader>ng", open_neogit, { desc = "Open Neogit" })
+    end,
+  },
 }
