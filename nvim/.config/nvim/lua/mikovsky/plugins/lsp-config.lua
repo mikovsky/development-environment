@@ -10,10 +10,11 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls",
-          "ts_ls",
           "bashls",
+          "gopls",
+          "lua_ls",
           "pyright",
+          "ts_ls",
           "yamlls",
         },
       })
@@ -49,6 +50,7 @@ return {
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       lspconfig.bashls.setup({ capabilities = capabilities })
+      lspconfig.gopls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
