@@ -30,10 +30,12 @@ return {
         end
 
         local supermethod_cmd = "<cmd>MetalsGotoSuperMethod<CR>"
+        local organizeimports_cmd = "<cmd>MetalsOrganizeImports<CR>"
         local worksheet_cmd = "<cmd>lua require('metals').hover_worksheet()<CR>"
         local commands_cmd = "<cmd>lua require('telescope').extensions.metals.commands()<CR>"
 
         map("n", "gs", supermethod_cmd, "Metals: Goto Super Method")
+        map("n", "<leader>co", organizeimports_cmd, "Metals: Organize Imports")
         map("n", "<leader>mw", worksheet_cmd, "Metals: Hover Worksheet")
         map("n", "<leader>mt", commands_cmd, "Metals: Show Commands")
       end
