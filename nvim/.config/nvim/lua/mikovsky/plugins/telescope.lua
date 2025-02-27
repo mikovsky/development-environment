@@ -64,5 +64,7 @@ return {
     vim.keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "[F]ind string under cursor in cwd" })
     vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[F]ind todos" })
     vim.keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { desc = "[F]ind string in buffer" })
+    vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[F]ind recently opened files" })
+    vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind - resume searching" })
   end,
 }
