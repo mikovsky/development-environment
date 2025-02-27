@@ -1,5 +1,18 @@
 return {
   {
+    "j-hui/fidget.nvim",
+    opts = {},
+  },
+  {
+    "folke/lazydev.nvim",
+    ft = "lua",
+    opts = {
+      library = {
+        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+      },
+    },
+  },
+  {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
@@ -8,6 +21,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
+      ---@diagnostic disable-next-line: missing-fields
       require("mason-lspconfig").setup({
         ensure_installed = {
           "bashls",
@@ -35,13 +49,24 @@ return {
     end,
   },
   {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-      },
-    },
+    "nvim-java/nvim-java",
+    config = function()
+      require("java").setup({
+        settings = {
+          java = {
+            configuration = {
+              runtimes = {
+                {
+                  name = "Java 23",
+                  path = "$HOME/.sdkman/candidates/java/23.0.2-amzn",
+                  default = true,
+                },
+              },
+            },
+          },
+        },
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -51,6 +76,7 @@ return {
 
       lspconfig.bashls.setup({ capabilities = capabilities })
       lspconfig.gopls.setup({ capabilities = capabilities })
+      lspconfig.jdtls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
