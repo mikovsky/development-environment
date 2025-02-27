@@ -3,10 +3,6 @@ return {
     "scalameta/nvim-metals",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
-      {
-        "j-hui/fidget.nvim",
-        opts = { notification = { window = { winblend = 0 } } },
-      },
     },
     ft = { "scala", "sbt" },
     opts = function()
