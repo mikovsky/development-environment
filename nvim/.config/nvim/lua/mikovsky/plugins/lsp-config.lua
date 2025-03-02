@@ -49,26 +49,6 @@ return {
     end,
   },
   {
-    "nvim-java/nvim-java",
-    config = function()
-      require("java").setup({
-        settings = {
-          java = {
-            configuration = {
-              runtimes = {
-                {
-                  name = "Java 23",
-                  path = "$HOME/.sdkman/candidates/java/23.0.2-amzn",
-                  default = true,
-                },
-              },
-            },
-          },
-        },
-      })
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
@@ -76,7 +56,6 @@ return {
 
       lspconfig.bashls.setup({ capabilities = capabilities })
       lspconfig.gopls.setup({ capabilities = capabilities })
-      lspconfig.jdtls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
