@@ -212,6 +212,8 @@ xinput --set-prop $id "libinput Accel Speed" 0; \
 done
 
 exec_always --no-startup-id xset r rate 300 40
+exec_always --no-startup-id xset s 1800 1800
+exec_always --no-startup-id xset dpms 1800 1800 1800
 
 set $Locker i3lock & sleep 1
 
