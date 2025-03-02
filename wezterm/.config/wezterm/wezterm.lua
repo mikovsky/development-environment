@@ -9,9 +9,17 @@ local OS = {
   MACOS = "aarch64-apple-darwin",
   LINUX = "x86_64-unknown-linux-gnu",
 }
+local THEMES = {
+  catppuccin = {
+    mocha = "Catppuccin Mocha",
+    macchiato = "Catppuccin Macchiato",
+    frappe = "Catppuccin Frappé",
+  },
+  tokyonight = "tokyonight",
+}
 
 config.automatically_reload_config = true
-config.color_scheme = "tokyonight"
+config.color_scheme = THEMES.catppuccin.mocha
 config.enable_tab_bar = false
 config.font = wezterm.font(FONTS.meslo, { weight = "Regular" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
