@@ -16,10 +16,14 @@ local THEMES = {
     frappe = "Catppuccin Frappé",
   },
   tokyonight = "tokyonight",
+  rose_pine = {
+    default = "Rosé Pine (Gogh)",
+    moon = "Rosé Pine Moon (Gogh)",
+  },
 }
 
 config.automatically_reload_config = true
-config.color_scheme = THEMES.catppuccin.mocha
+config.color_scheme = THEMES.rose_pine.default
 config.enable_tab_bar = false
 config.font = wezterm.font(FONTS.meslo, { weight = "Regular" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }

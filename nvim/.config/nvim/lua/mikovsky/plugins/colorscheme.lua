@@ -19,44 +19,24 @@ return {
     end,
   },
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "rose-pine/neovim",
+    name = "rose-pine",
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        background = {
-          light = "latte",
-          dark = "mocha",
-        },
-        term_colors = true,
-        integrations = {
-          gitsigns = true,
-          neotree = true,
-          treesitter = true,
-          notify = true,
-          blink_cmp = true,
-          fidget = true,
-          harpoon = true,
-          mason = true,
-          copilot_vim = true,
-          dap = true,
-          dap_ui = true,
-          telescope = true,
-          lsp_trouble = true,
-          which_key = true,
+      require("rose-pine").setup({
+        variant = "main",
+        dark_variant = "main",
+        extend_background_behind_borders = true,
+        enable = {
+          terminal = true,
         },
         styles = {
-          miscs = {},
+          bold = true,
+          italic = false,
+          transparency = false,
         },
       })
-
-      local sign = vim.fn.sign_define
-      sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
-      sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
-      sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
-
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("rose-pine")
     end,
   },
 }
