@@ -46,6 +46,9 @@ return {
           lsp_trouble = true,
           which_key = true,
         },
+        styles = {
+          miscs = {},
+        },
       })
 
       local sign = vim.fn.sign_define
