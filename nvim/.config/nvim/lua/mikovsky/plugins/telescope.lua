@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   event = "VimEnter",
-  branch = "0.1.x",
+  branch = "master",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -36,7 +36,9 @@ return {
           "venv/",
           "build/",
         },
-        path_display = { "truncate" },
+        path_display = {
+          "filename_first",
+        },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,
