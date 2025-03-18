@@ -1,90 +1,91 @@
 #!/usr/bin/env bash
 
 switch_to() {
-    if [[ -z $TMUX ]]; then
-        tmux attach-session -t $1
-    else
-        tmux switch-client -t $1
-    fi
+  if [[ -z $TMUX ]]; then
+    tmux attach-session -t $1
+  else
+    tmux switch-client -t $1
+  fi
 }
 
 has_session() {
-    tmux list-sessions | grep -q "^$1:"
+  tmux list-sessions | grep -q "^$1:"
 }
 
 hydrate() {
-    if [ -f $2/.tmux-sessionizer ]; then
-        tmux send-keys -t $1 "source $2/.tmux-sessionizer" c-M
-    elif [ -f $HOME/.tmux-sessionizer ]; then
-        tmux send-keys -t $1 "source $HOME/.tmux-sessionizer" c-M
-    fi
+  if [ -f $2/.tmux-sessionizer ]; then
+    tmux send-keys -t $1 "source $2/.tmux-sessionizer" c-M
+  elif [ -f $HOME/.tmux-sessionizer ]; then
+    tmux send-keys -t $1 "source $HOME/.tmux-sessionizer" c-M
+  fi
 }
 
 # Konfiguracja dla różnych ścieżek
 declare -A path_configs=(
-    # personal
-    ["$HOME/.dotfiles"]="0 0" # mindepth=0 maxdepth=0
-    ["$HOME/personal"]="0 1"  # mindepth=0 maxdepth=1
-    # work
-    ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
-    ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
-    ["$HOME/workspace/tools"]="1 1"            # mindepth=1 maxdepth=1
-    ["$HOME/workspace/kubernetes"]="0 1"       # mindepth=1 maxdepth=1
+  # personal
+  ["$HOME/.dotfiles"]="0 0"      # mindepth=0 maxdepth=0
+  ["$HOME/personal"]="0 1"       # mindepth=0 maxdepth=1
+  ["$HOME/personal/convi"]="1 1" # mindepth=1 maxdepth=1
+  # work
+  ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
+  ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
+  ["$HOME/workspace/tools"]="1 1"            # mindepth=1 maxdepth=1
+  ["$HOME/workspace/kubernetes"]="0 1"       # mindepth=1 maxdepth=1
 )
 
 excluded_patterns=(
-    '.git'         # git directories
-    'node_modules' # node modules
-    '.next'        # Next.js build directory
-    'target'       # Rust/Java build directory
-    'build'        # Generic build directory
-    'dist'         # Distribution directory
+  '.git'         # git directories
+  'node_modules' # node modules
+  '.next'        # Next.js build directory
+  'target'       # Rust/Java build directory
+  'build'        # Generic build directory
+  'dist'         # Distribution directory
 )
 
 get_find_results() {
-    local results=""
-    local exlude_args=""
+  local results=""
+  local exlude_args=""
 
-    # Budowanie argumentów wykluczających
-    for pattern in "${excluded_patterns[@]}"; do
-        exclude_args+=" -not -path '*/$pattern/*'"
-        exclude_args+=" -not -path '*/$pattern'"
-    done
+  # Budowanie argumentów wykluczających
+  for pattern in "${excluded_patterns[@]}"; do
+    exclude_args+=" -not -path '*/$pattern/*'"
+    exclude_args+=" -not -path '*/$pattern'"
+  done
 
-    for path in "${!path_configs[@]}"; do
-        if [[ -d "$path" ]]; then
-            read -r mindepth maxdepth <<<"${path_configs[$path]}"
-            # Używamy eval, ponieważ exclude_args zawiera wzorce, które muszą być interpretowane przez shell
-            results+=$(eval find \"$path\" -mindepth \"$mindepth\" -maxdepth \"$maxdepth\" -type d $exclude_args)$'\n'
-        fi
-    done
+  for path in "${!path_configs[@]}"; do
+    if [[ -d "$path" ]]; then
+      read -r mindepth maxdepth <<<"${path_configs[$path]}"
+      # Używamy eval, ponieważ exclude_args zawiera wzorce, które muszą być interpretowane przez shell
+      results+=$(eval find \"$path\" -mindepth \"$mindepth\" -maxdepth \"$maxdepth\" -type d $exclude_args)$'\n'
+    fi
+  done
 
-    echo "$results" | sed '/^$/d' # Usuwa puste linie
+  echo "$results" | sed '/^$/d' # Usuwa puste linie
 }
 
 if [[ $# -eq 1 ]]; then
-    selected=$1
+  selected=$1
 else
-    # selected=$(find ~/workspace ~/workspace/sources ~/workspace/tools ~/workspace/sources/monorepo ~/dotfiles -mindepth 1 -maxdepth 2 -type d | fzf)
-    selected=$(get_find_results | fzf)
+  # selected=$(find ~/workspace ~/workspace/sources ~/workspace/tools ~/workspace/sources/monorepo ~/dotfiles -mindepth 1 -maxdepth 2 -type d | fzf)
+  selected=$(get_find_results | fzf)
 fi
 
 if [[ -z $selected ]]; then
-    exit 0
+  exit 0
 fi
 
 selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    hydrate $selected_name $selected
-    exit 0
+  tmux new-session -s $selected_name -c $selected
+  hydrate $selected_name $selected
+  exit 0
 fi
 
 if ! has_session $selected_name; then
-    tmux new-session -ds $selected_name -c $selected
-    hydrate $selected_name $selected
+  tmux new-session -ds $selected_name -c $selected
+  hydrate $selected_name $selected
 fi
 
 switch_to $selected_name
