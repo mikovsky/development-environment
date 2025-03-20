@@ -6,6 +6,7 @@ AddKeymap("n", "gt", VSCodeAction("editor.action.goToTypeDefinition"), "LSP: Sho
 AddKeymap("n", "<leader>cf", VSCodeAction("editor.action.formatDocument"), "LSP: Code Format")
 AddKeymap({ "n", "v" }, "<leader>ca", VSCodeAction("editor.action.quickFix"), "LSP: Code Actions")
 AddKeymap({ "n", "v" }, "<leader>cl", VSCodeAction("codelens.showLensesInCurrentLine"), "LSP: Code Lens")
+AddKeymap("n", "<leader>co", VSCodeAction("editor.action.organizeImports"), "LSP: Organize Imports")
 AddKeymap("n", "<leader>rn", VSCodeAction("editor.action.rename"), "LSP: Rename")
 AddKeymap("n", "K", VSCodeAction("editor.action.showHover"), "LSP: Show documentation on hover")
 AddKeymap("n", "<leader>k", VSCodeAction("editor.action.triggerParameterHints"), "LSP: Show signature help on hover")
