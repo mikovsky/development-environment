@@ -7,13 +7,12 @@ function VSCodeAction(action)
 end
 
 if vim.g.vscode then
-    require("mikovsky.options")
-    require("mikovsky.keymaps")
-    require("mikovsky.lsp")
-    require("mikovsky.harpoon")
-    require("mikovsky.project-manager")
-    require("mikovsky.tests")
-    require("mikovsky.git")
+    require("mikovsky-vscode.options")
+    require("mikovsky-vscode.keymaps")
+    require("mikovsky-vscode.lsp")
+    require("mikovsky-vscode.harpoon")
+    require("mikovsky-vscode.tests")
+    require("mikovsky-vscode.git")
 else
     -- Do nothing for now
 end
