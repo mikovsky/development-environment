@@ -1,0 +1,8 @@
+AddKeymap("n", "<leader>je", VSCodeAction("vscode-harpoon.editEditors"))
+AddKeymap("n", "<leader>je", VSCodeAction("vscode-harpoon.editEditors"))
+AddKeymap("n", "<leader>ji", VSCodeAction("vscode-harpoon.addEditor"))
+AddKeymap("n", "<leader>jo", VSCodeAction("vscode-harpoon.editorQuickPick"))
+AddKeymap("n", "<leader>jf", VSCodeAction("vscode-harpoon.gotoEditor1"))
+AddKeymap("n", "<leader>jd", VSCodeAction("vscode-harpoon.gotoEditor2"))
+AddKeymap("n", "<leader>js", VSCodeAction("vscode-harpoon.gotoEditor3"))
+AddKeymap("n", "<leader>ja", VSCodeAction("vscode-harpoon.gotoEditor4"))

@@ -27,7 +27,6 @@ return {
           "bashls",
           "gopls",
           "lua_ls",
-          "pyright",
           "ts_ls",
           "yamlls",
         },
@@ -42,8 +41,6 @@ return {
           "stylua",
           "prettier",
           "shfmt",
-          "isort",
-          "black",
         },
       })
     end,
@@ -58,7 +55,6 @@ return {
       lspconfig.gopls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.protols.setup({ capabilities = capabilities })
-      lspconfig.pyright.setup({ capabilities = capabilities })
       lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.yamlls.setup({ capabilities = capabilities })
 

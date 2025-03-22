@@ -13,31 +13,6 @@ local function setup_keymaps(dap, dapui)
   vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Debug - Toggle breakpoint" })
 end
 
-local function setup_c(dap)
-  local configuration = {
-    {
-      name = "Launch File",
-      type = "codelldb",
-      request = "launch",
-      program = function()
-        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-      end,
-      args = function()
-        return vim.split(vim.fn.input("Arguments: "), " ")
-      end,
-      cwd = "${workspaceFolder}",
-      stopOnEntry = false,
-    },
-  }
-
-  dap.configurations.c = configuration
-  dap.configurations.cpp = configuration
-  dap.adapters.codelldb = {
-    type = "executable",
-    command = "codelldb",
-  }
-end
-
 local function setup_go()
   require("dap-go").setup()
 end
@@ -58,7 +33,6 @@ return {
       setup_keymaps(dap, dapui)
 
       -- Languages
-      setup_c(dap)
       setup_go()
     end,
   },
