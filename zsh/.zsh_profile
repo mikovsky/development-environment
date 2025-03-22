@@ -14,31 +14,3 @@ alias vim="nvim"
 
 # Keybinds
 bindkey -s '^f' 'tmux-sessionizer\n'
-
-# Environment variables
-export GIT_EDITOR=$VIM
-export DOTFILES=$HOME/.dotfiles
-
-# PATH setup
-export LOCAL_BIN="$HOME/.local/bin"
-export PATH="$LOCAL_BIN:$PATH"
-
-export COURSIER_HOME="$HOME/.local/share/coursier"
-export PATH="$COURSIER_HOME/bin:$PATH"
-
-export LOCAL_SCRIPTS="$HOME/.local/scripts"
-export PATH="$LOCAL_SCRIPTS:$PATH"
-
-export GO_PATH="/usr/local/go"
-export PATH="$GO_PATH/bin:$PATH"
-
-export GO_BIN="$HOME/go/bin"
-export PATH="$GO_BIN:$PATH"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
