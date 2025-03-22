@@ -96,3 +96,13 @@ gtk-application-prefer-dark-theme=1
 
 1. Install `Extension Manager` using `App Center`
 1. Install `Forge` using `Extension Manager`
+1. Remove these keybindings:
+   1. gsettings set org.gnome.shell.keybindings switch-to-application-1 "[]"
+   1. gsettings set org.gnome.shell.keybindings switch-to-application-2 "[]"
+   1. gsettings set org.gnome.shell.keybindings switch-to-application-3 "[]"
+   1. gsettings set org.gnome.shell.keybindings switch-to-application-4 "[]"
+1. Setup these keybindings:
+   1. gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']"
+   1. gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']"
+   1. gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
+   1. gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
