@@ -91,3 +91,8 @@ sudo install lazygit -D -t /usr/local/bin/` - install lazygit
 [Settings]
 gtk-application-prefer-dark-theme=1
 ```
+
+### Forge
+
+1. Install `Extension Manager` using `App Center`
+1. Install `Forge` using `Extension Manager`
