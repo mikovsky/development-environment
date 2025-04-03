@@ -23,8 +23,8 @@ hydrate() {
 # Konfiguracja dla różnych ścieżek
 declare -A path_configs=(
   # personal
-  ["$HOME/.dotfiles"]="0 0" # mindepth=0 maxdepth=0
-  ["$HOME/personal"]="0 1"  # mindepth=0 maxdepth=1
+  ["$HOME/development-environment"]="0 0" # mindepth=0 maxdepth=0
+  ["$HOME/personal"]="0 1"                # mindepth=0 maxdepth=1
 
   # work
   ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
