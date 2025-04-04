@@ -1,11 +1,21 @@
 local metals_settings = {
-  bloopSbtAlreadyInstalled = true,
-  defaultBspToBuildTool = true,
   enableSemanticHighlighting = true,
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
   showInferredType = true,
   superMethodLensesEnabled = true,
+  serverProperties = {
+    "-Xms1G",
+    "-Xmx2G",
+  },
+  -- bloopSbtAlreadyInstalled = true,
+  -- defaultBspToBuildTool = true,
+  bloopJvmProperties = {
+    "-Xms2G",
+    "-Xmx6G",
+    "-XX:+UseG1GC",
+    "-XX:MaxMetaspaceSize=1G",
+  },
 }
 
 local function metals_on_attach(_, buffer)
