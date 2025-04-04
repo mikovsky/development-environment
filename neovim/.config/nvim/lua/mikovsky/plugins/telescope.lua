@@ -51,6 +51,29 @@ return {
         find_files = {
           hidden = true,
         },
+        live_grep = {},
+        grep_string = {},
+        lsp_definitions = {
+          file_ignore_patterns = {},
+        },
+        lsp_references = {
+          file_ignore_patterns = {},
+        },
+        lsp_implementations = {
+          file_ignore_patterns = {},
+        },
+        lsp_declarations = {
+          file_ignore_patterns = {},
+        },
+        lsp_type_definitions = {
+          file_ignore_patterns = {},
+        },
+        lsp_document_symbols = {
+          file_ignore_patterns = {},
+        },
+        lsp_dynamic_workspace_symbols = {
+          file_ignore_patterns = {},
+        },
       },
       extensions = {
         fzf = {},

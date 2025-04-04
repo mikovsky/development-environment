@@ -68,11 +68,11 @@ return {
             vim.keymap.set(mode, key, callback, { buffer = event.buf, silent = true, desc = desc })
           end
 
-          map("n", "gr", vim.lsp.buf.references, "Show LSP references")
-          map("n", "gd", vim.lsp.buf.definition, "Show LSP definitions")
+          map("n", "gr", builtin.lsp_references, "Show LSP references")
+          map("n", "gd", builtin.lsp_definitions, "Show LSP definitions")
           map("n", "gD", vim.lsp.buf.declaration, "Go to declaration")
-          map("n", "gi", vim.lsp.buf.implementation, "Show LSP implementations")
-          map("n", "gt", vim.lsp.buf.type_definition, "Show LSP type definitions")
+          map("n", "gi", builtin.lsp_implementations, "Show LSP implementations")
+          map("n", "gt", builtin.lsp_type_definitions, "Show LSP type definitions")
           map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "See available code actions")
           map({ "n", "v" }, "<leader>cl", vim.lsp.codelens.run, "See available code lens")
           map("n", "<leader>rn", vim.lsp.buf.rename, "Smart rename")
