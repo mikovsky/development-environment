@@ -20,19 +20,25 @@ return {
         nerd_font_variant = "mono",
       },
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-        per_filetype = {
-          sql = { "snippets", "dadbod", "buffer" },
-        },
-        providers = {
-          dadbod = {
-            name = "Dadbod",
-            module = "vim_dadbod_completion.blink",
-          },
+        default = {
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
         },
       },
       cmdline = { enabled = false },
       signature = { enabled = true },
+      completion = {
+        menu = {
+          draw = {
+            columns = {
+              { "label", "label_description", gap = 1 },
+              { "kind_icon", "kind", gap = 1 },
+            },
+          },
+        },
+      },
     },
     opts_extend = { "sources.default" },
   },
