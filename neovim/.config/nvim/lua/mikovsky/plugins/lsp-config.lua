@@ -28,7 +28,7 @@ return {
           "gopls",
           "lua_ls",
           "prismals",
-          "ts_ls",
+          -- "ts_ls",
           "yamlls",
         },
       })
@@ -57,7 +57,7 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.prismals.setup({ capabilities = capabilities })
       lspconfig.protols.setup({ capabilities = capabilities })
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      -- lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.yamlls.setup({ capabilities = capabilities })
 
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -87,5 +87,19 @@ return {
         end,
       })
     end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {
+      on_attach = function(_, bufnr)
+        local function map(mode, key, callback, desc)
+          vim.keymap.set(mode, key, callback, { buffer = bufnr, silent = true, desc = desc })
+        end
+
+        map("n", "<leader>co", "<cmd>TSToolsOrganizeImports<CR>", "TS: Organize Imports")
+        map("n", "<leader>rf", "<cmd>TSToolsRenameFile<CR>", "TS: Rename File")
+      end,
+    },
   },
 }
