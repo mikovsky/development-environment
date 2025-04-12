@@ -11,7 +11,7 @@ return {
       require("lualine").setup({
         options = {
           icons_enabled = true,
-          theme = "catppuccin",
+          theme = "rose-pine",
           disabled_filetypes = {
             statusline = {
               "neo-tree",
