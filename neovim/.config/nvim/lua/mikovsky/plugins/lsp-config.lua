@@ -100,6 +100,11 @@ return {
         map("n", "<leader>co", "<cmd>TSToolsOrganizeImports<CR>", "TS: Organize Imports")
         map("n", "<leader>rf", "<cmd>TSToolsRenameFile<CR>", "TS: Rename File")
       end,
+      settings = {
+        tsserver_file_preferences = {
+          importModuleSpecifierPreference = "non-relative",
+        },
+      },
     },
   },
 }
