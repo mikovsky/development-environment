@@ -5,13 +5,13 @@ local metals_settings = {
   showInferredType = true,
   superMethodLensesEnabled = true,
   serverProperties = {
-    "-Xms1G",
-    "-Xmx2G",
+    "-Xms2G",
+    "-Xmx4G",
   },
   -- bloopSbtAlreadyInstalled = true,
   -- defaultBspToBuildTool = true,
   bloopJvmProperties = {
-    "-Xms2G",
+    "-Xms4G",
     "-Xmx6G",
     "-XX:+UseG1GC",
     "-XX:MaxMetaspaceSize=1G",
