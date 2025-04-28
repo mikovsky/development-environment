@@ -56,7 +56,8 @@ return {
       lspconfig.gopls.setup({ capabilities = capabilities })
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.prismals.setup({ capabilities = capabilities })
-      lspconfig.protols.setup({ capabilities = capabilities })
+      -- lspconfig.protols.setup({ capabilities = capabilities })
+      lspconfig.buf_ls.setup({ capabilities = capabilities })
       -- lspconfig.ts_ls.setup({ capabilities = capabilities })
       lspconfig.yamlls.setup({ capabilities = capabilities })
 
