@@ -25,7 +25,7 @@ local THEMES = {
 }
 
 config.automatically_reload_config = true
-config.color_scheme = THEMES.rose_pine.default
+config.color_scheme = THEMES.tokyonight
 config.enable_tab_bar = false
 config.font = wezterm.font(FONTS.jetbrains, { weight = "Regular" })
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
