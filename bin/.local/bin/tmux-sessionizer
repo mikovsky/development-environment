@@ -29,6 +29,7 @@ declare -A path_configs=(
   # work
   ["$HOME/workspace/sources/monorepo"]="0 2" # mindepth=0 maxdepth=2
   ["$HOME/workspace/sources"]="1 1"          # mindepth=1 maxdepth=1
+  ["$HOME/workspace/scripts"]="0 1"          # mindepth=1 maxdepth=1
   ["$HOME/workspace/tools"]="1 1"            # mindepth=1 maxdepth=1
   ["$HOME/workspace/kubernetes"]="0 1"       # mindepth=1 maxdepth=1
 )
