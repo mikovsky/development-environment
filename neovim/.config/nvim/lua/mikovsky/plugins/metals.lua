@@ -5,17 +5,17 @@ local metals_settings = {
   showInferredType = true,
   superMethodLensesEnabled = true,
   serverProperties = {
-    "-Xms2G",
-    "-Xmx4G",
+    "-Xms1G",
+    "-Xmx2G",
   },
-  -- bloopSbtAlreadyInstalled = true,
-  -- defaultBspToBuildTool = true,
-  bloopJvmProperties = {
-    "-Xms4G",
-    "-Xmx6G",
-    "-XX:+UseG1GC",
-    "-XX:MaxMetaspaceSize=1G",
-  },
+  bloopSbtAlreadyInstalled = true,
+  defaultBspToBuildTool = true,
+  -- bloopJvmProperties = {
+  --   "-Xms2G",
+  --   "-Xmx4G",
+  --   "-XX:+UseG1GC",
+  --   "-XX:MaxMetaspaceSize=1G",
+  -- },
 }
 
 local function metals_on_attach(_, buffer)
