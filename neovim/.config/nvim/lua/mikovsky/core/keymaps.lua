@@ -8,26 +8,26 @@ vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
 
 -- vertical movement
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<A-j>", "jzz")
-vim.keymap.set("n", "<A-k>", "kzz")
-vim.keymap.set("n", "{", "{zz")
-vim.keymap.set("n", "}", "}zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "center cursor when scrolling down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "center cursor when scrolling up" })
+vim.keymap.set("n", "<A-j>", "jzz", { desc = "center cursor when moving down" })
+vim.keymap.set("n", "<A-k>", "kzz", { desc = "center cursor when moving up" })
+vim.keymap.set("n", "{", "{zz", { desc = "center cursor when moving to previous paragraph" })
+vim.keymap.set("n", "}", "}zz", { desc = "center cursor when moving to next paragraph" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "center cursor when searching forward" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "center cursor when searching backward" })
 
 -- moving text
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("x", "H", "<gv")
-vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("x", "L", ">gv")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines and keep cursor in the same place" })
+vim.keymap.set("x", "H", "<gv", { desc = "move selected text left" })
+vim.keymap.set("x", "J", ":m '>+1<CR>gv=gv", { desc = "move selected text down" })
+vim.keymap.set("x", "K", ":m '<-2<CR>gv=gv", { desc = "move selected text up" })
+vim.keymap.set("x", "L", ">gv", { desc = "move selected text right" })
 
 -- text buffers
-vim.keymap.set("x", "<leader>p", '"_dP')
-vim.keymap.set("x", "<leader>P", '"_dp')
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "paste selected text after without losing it" })
+vim.keymap.set("x", "<leader>P", '"_dp', { desc = "paste selected text before witout losing it" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete withour overwriting the default register" })
 
 -- window management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
