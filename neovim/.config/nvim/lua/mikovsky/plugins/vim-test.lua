@@ -5,7 +5,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      vim.g["test#scala#runner"] = "blooptest" -- "blooptest" or "sbttest"
+      vim.g["test#scala#runner"] = "sbttest" -- "blooptest" or "sbttest"
       vim.g["test#strategy"] = "neovim" -- "neovim"
 
       vim.keymap.set("n", "<leader>tn", ":TestNearest<CR>", { desc = "[T]ests: Run Nearest Test" })
