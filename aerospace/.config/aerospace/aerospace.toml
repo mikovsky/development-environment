@@ -159,3 +159,27 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.macpomodoro'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.1password.1password'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'cc.ffitch.shottr'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.wireguard.macos'
+    run = 'layout floating'
+
+[[on-window-detected]]
+    if.app-id = 'com.fortinet.FortiClient'
+    run = 'layout floating'
